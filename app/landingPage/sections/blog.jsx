@@ -29,7 +29,7 @@ export default function BlogSection() {
 
             </div>
           ))}
-        </div>
+       </div>
 
         <div className="text-center mt-10">
           <Link href="/blog" className="inline-block px-6 py-3 bg-[#06be8a] text-white rounded-full hover:bg-gray-700 transition-colors">
