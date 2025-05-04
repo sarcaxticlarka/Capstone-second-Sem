@@ -5,6 +5,10 @@ import DiscoverAll from './sections/discoverAll'
 import Featured from "./sections/featured"
 import Testimonial from './sections/testimonials'
 import BlogSec from "./sections/blog"
+import VedioCont from "./sections/vedioCont"
+import FaqSection from './sections/faqSection'
+import ContactUs from './sections/contactUs'
+
 const page = () => {
     return (
         <div>
@@ -14,6 +18,9 @@ const page = () => {
             <Featured/>
             <Testimonial/>
             <BlogSec/>
+            <VedioCont/>
+            <FaqSection/>
+             
         </div>
     )
 }

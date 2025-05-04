@@ -4,11 +4,11 @@ import { properties } from "../../data/categories";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white py-12 px-4 sm:px-8 lg:px-16">
+    <main className="min-h-screen mx-auto bg-white py-12 px-4 sm:px-8 lg:px-32">
       {/* Hero Section */}
       <div className="text-center mb-12">
         <div className="flex justify-center mb-2">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#06BE8A] bg-opacity-10 text-black">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#06BE8A] bg-opacity-10 text-white">
              
             Properties
           </span>
