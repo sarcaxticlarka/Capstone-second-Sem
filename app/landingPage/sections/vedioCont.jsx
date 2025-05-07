@@ -14,11 +14,9 @@ export default function VideoBackground() {
   }, []);
 
   return (
-    <div className="relative h-screen w-full flex justify-center items-center overflow-hidden">
-      {/* Video Container - 80vw width and centered */}
-      <div className="relative max-w-6xl rounded-xl overflow-hidden bg-white shadow-lg ">
-      {/* Video Element */}
-        <video
+    <div className="relative min-h-0 w-full flex justify-center items-center overflow-hidden">
+       <div className="relative max-w-6xl rounded-xl overflow-hidden bg-white shadow-lg ">
+         <video
           ref={videoRef}
           autoPlay
           loop

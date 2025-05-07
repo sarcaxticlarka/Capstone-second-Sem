@@ -48,7 +48,7 @@ const ContactForm = () => {
         ></textarea>
         <button
           type="submit"
-          className="w-full mt-4 border border-gray-200 hover:bg-gray-800 hover:text-gray-100 text-black py-3 rounded-full transition-bg "
+          className="w-full mt-4 border border-gray-200 hover:bg-gray-800 hover:text-gray-100 text-white py-3 rounded-full transition-bg "
         >
           Book a Call
         </button>

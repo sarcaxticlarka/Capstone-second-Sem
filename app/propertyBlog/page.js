@@ -20,6 +20,5 @@
 import BlogDetail from './[id]/page';
 
 export default function PropertyBlogWrapper() {
-  // hardcoding an ID will break dynamic routing; this is not ideal
-  return <BlogDetail params={{ id: '1' }} />;
+   return <BlogDetail params={{ id: '1' }} />;
 }

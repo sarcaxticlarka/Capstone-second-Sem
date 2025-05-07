@@ -1,10 +1,23 @@
 "use client"
+import Navbar from "@/components/navbar";
 import { Phone, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function PropertyListing() {
     const [menuOpen, setMenuOpen] = useState(false);
- 
+    const [showNavbar, setShowNavbar] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const triggerPoint = window.innerWidth * 0.05;  
+            setShowNavbar(scrollY > triggerPoint);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    
     useEffect(() => {
         if (menuOpen) {
             document.body.style.overflow = 'hidden';
@@ -19,6 +32,11 @@ export default function PropertyListing() {
 
     return (
         <div className="relative min-h-screen w-full bg-blue-300/10">
+           {showNavbar && (
+                <div className="fixed top-0 left-0 w-full z-50">
+                    <Navbar />
+                </div>
+            )}
              <div
                 className="absolute inset-0 z-0 bg-cover bg-center"
                 style={{
@@ -28,9 +46,9 @@ export default function PropertyListing() {
             />
 
   
-            <div className="relative z-10 min-h-screen flex flex-col">
+            <div className="relative  min-h-screen flex flex-col">
                 {/* Navigation Bar */}
-                <header className="w-full p-4 md:p-6 flex justify-between items-center">
+                <header className="w-full  p-4 md:p-6 md:px-32 flex justify-between items-center">
                     <div className="flex items-center">
                         <div className="text-white mr-2">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -57,7 +75,7 @@ export default function PropertyListing() {
                     </div>
                 </header>
 
-                {/* Main Content Area */}
+          
                 <main className="flex-1 flex flex-col justify-between">
                     {/* Property Title Section */}
                     <div className="px-6 md:px-10 pt-16 md:pt-24">
@@ -79,7 +97,7 @@ export default function PropertyListing() {
                         </div>
                     </div>
 
-                    {/* Property Stats Card */}
+                    {/* Stats Card */}
                     <div className="w-full md:w-[55vw] mx-auto absolute bottom-0 right-0">
                         <div className="mt-auto mx-6 md:mx-10 mb-6 md:mb-10">
                             <div className="bg-white rounded-lg p-6 md:p-8 shadow-lg grid grid-cols-1 md:grid-cols-4 gap-6">
