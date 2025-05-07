@@ -1,5 +1,4 @@
-// data/blogcontent.js
-
+ 
 const blogData = [
     {
       id: 1,
