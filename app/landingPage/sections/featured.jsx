@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { MapPin, Bed, Bath, Car, Wine } from 'lucide-react';
+import Link from 'next/link';
 
 export default function PropertyListing() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -12,7 +13,7 @@ export default function PropertyListing() {
     "https://images.unsplash.com/photo-1635108201018-94bbbfac4a79?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
-  // Auto-rotate images every 2 seconds
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -26,7 +27,7 @@ export default function PropertyListing() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4 font-sans">
+    <div id="featured" className="max-w-6xl mx-auto p-4 font-sans">
       <div className="flex flex-col lg:flex-row gap-6 bg-white   overflow-hidden">
         {/* Image carousel section */}
         <div className="relative w-full lg:w-1/2 h-120 bg-blue-600 rounded-lg overflow-hidden">
@@ -98,9 +99,11 @@ export default function PropertyListing() {
             </div>
             
             <div className="flex items-center justify-between">
+            <Link href="auth/signup" >
               <button className="px-6 py-3 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition-colors">
                 Get in touch
               </button>
+              </Link >
               <div>
                 <div className="text-3xl font-bold text-gray-900">$1,650,500</div>
                 <div className="text-gray-600">Discounted Price</div>

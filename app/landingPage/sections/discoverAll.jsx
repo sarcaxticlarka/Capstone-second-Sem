@@ -5,11 +5,11 @@ import { properties } from "../../data/categories";
 export default function HomePage() {
   return (
     <main className="min-h-screen mx-auto bg-white py-12 px-4 sm:px-8 lg:px-32">
-      {/* Hero Section */}
+
       <div className="text-center mb-12">
         <div className="flex justify-center mb-2">
           <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[#06BE8A] bg-opacity-10 text-white">
-             
+
             Properties
           </span>
         </div>
@@ -17,11 +17,11 @@ export default function HomePage() {
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">Curated homes where elegance, style, and comfort unite.</p>
       </div>
 
-      {/* Properties Grid */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {properties.map((property) => (
-          <Link 
-            href={`/property/${property.id}`} 
+          <Link
+            href={`/property/${property.id}`}
             key={property.id}
             className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 relative"
           >
@@ -47,7 +47,7 @@ export default function HomePage() {
                   ${property.price.toLocaleString()}
                 </span>
               </div>
-              
+
               <div className="flex justify-between text-gray-500 mt-4 pt-4 border-t border-gray-100">
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,9 +75,12 @@ export default function HomePage() {
 
       {/* View All Button */}
       <div className="flex justify-center">
-        <button className="bg-[#06BE8A] hover:bg-[#05a878] text-white font-medium px-6 py-3 rounded-full transition">
-          View all listing
-        </button>
+        <Link href="allProperties" >
+
+          <button className="bg-[#06BE8A] hover:bg-[#05a878] text-white font-medium px-6 py-3 rounded-full transition">
+            View all listing
+          </button>
+        </Link>
       </div>
     </main>
   );

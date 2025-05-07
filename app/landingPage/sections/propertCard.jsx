@@ -8,7 +8,7 @@ export default function PropertyCard() {
   return (
 <main className="min-h-screen bg-white p-8 px-4 md:px-32 md:py-32">
 <section className="grid md:grid-cols-2 gap-10 items-center">
-        {/* Text Section */}
+      
         <div className="space-y-6">
           <p className="text-md text-[#06BE8A] font-semibold">🏡 Categories</p>
           <h1 className="text-4xl font-bold text-gray-900">
@@ -17,16 +17,16 @@ export default function PropertyCard() {
           <p className="text-gray-600 text-lg">
             Discover a diverse range of premium properties, from luxurious apartments to spacious villas, tailored to your needs.
           </p>
-          <Link href="/property">
+          <Link href="/allProperties">
             <button className="bg-[#06BE8A] text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition">
               View Properties
             </button>
           </Link>
         </div>
 
-        {/* Image Grid with Custom Layout */}
+     
         <div className="flex flex-col gap-6">
-          {/* First Image - Full Width */}
+      
           <Link
             key={topProperties[0].id}
             href={`/property/${topProperties[0].id}`}

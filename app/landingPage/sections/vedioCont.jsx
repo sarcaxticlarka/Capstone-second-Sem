@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 export default function VideoBackground() {
   const videoRef = useRef(null);
@@ -34,9 +35,11 @@ export default function VideoBackground() {
             Enter a realm where exquisite design <br />
             and timeless luxury come together.
           </h1>
+          <Link href="/auth/signup">
           <button className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition">
             Get in touch
           </button>
+          </Link>
         </div>
         
         {/* Scrolling Bottom Bar */}

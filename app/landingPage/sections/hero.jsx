@@ -2,6 +2,8 @@
 import Navbar from "@/components/navbar";
 import { Phone, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
+import { X } from 'lucide-react';
+import Link from 'next/link';
 
 export default function PropertyListing() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -10,14 +12,14 @@ export default function PropertyListing() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
-            const triggerPoint = window.innerWidth * 0.05;  
+            const triggerPoint = window.innerWidth * 0.05;
             setShowNavbar(scrollY > triggerPoint);
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-    
+
     useEffect(() => {
         if (menuOpen) {
             document.body.style.overflow = 'hidden';
@@ -32,12 +34,12 @@ export default function PropertyListing() {
 
     return (
         <div className="relative min-h-screen w-full bg-blue-300/10">
-           {showNavbar && (
+            {showNavbar && (
                 <div className="fixed top-0 left-0 w-full z-50">
                     <Navbar />
                 </div>
             )}
-             <div
+            <div
                 className="absolute inset-0 z-0 bg-cover bg-center"
                 style={{
                     backgroundImage: "url('https://images.unsplash.com/photo-1670589953882-b94c9cb380f5?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -45,7 +47,7 @@ export default function PropertyListing() {
                 }}
             />
 
-  
+
             <div className="relative  min-h-screen flex flex-col">
                 {/* Navigation Bar */}
                 <header className="w-full  p-4 md:p-6 md:px-32 flex justify-between items-center">
@@ -75,7 +77,7 @@ export default function PropertyListing() {
                     </div>
                 </header>
 
-          
+
                 <main className="flex-1 flex flex-col justify-between">
                     {/* Property Title Section */}
                     <div className="px-6 md:px-10 pt-16 md:pt-24">
@@ -87,12 +89,16 @@ export default function PropertyListing() {
                             </h1>
 
                             <div className="flex flex-wrap gap-4">
-                                <button className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-3 px-6 rounded-full transition">
-                                    Get in touch
-                                </button>
+                                <Link href="auth/signup" >
+                                    <button className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-3 px-6 rounded-full transition">
+                                        Get in touch
+                                    </button>
+                                </Link>
+                                <a href="#featured" >
                                 <button className="bg-transparent hover:bg-white/10 text-white border border-white font-medium py-3 px-6 rounded-full transition">
                                     View Details
                                 </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -145,30 +151,38 @@ export default function PropertyListing() {
 
             {/* Side Menu Overlay */}
             <div
-                className={`fixed inset-y-0 right-0 z-50 w-2/5 bg-black/90 transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+                className={`fixed inset-y-0 right-0 z-50 w-2/8 bg-black/90 transform transition-transform duration-300 ease-in-out rounded-tl-3xl rounded-bl-3xl ${menuOpen ? 'translate-x-0' : 'translate-x-full'
                     }`}
             >
                 <button
                     onClick={() => setMenuOpen(false)}
                     className="absolute top-6 right-6 text-white"
                 >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
+                    <X size={28} />
                 </button>
 
                 <nav className="h-full flex items-center justify-center">
                     <ul className="space-y-8">
-                        <li><a href="#" className="text-white text-2xl hover:text-blue-300 transition-colors">Home</a></li>
-                        <li><a href="#" className="text-white text-2xl hover:text-blue-300 transition-colors">Properties</a></li>
-                        <li><a href="#" className="text-white text-2xl hover:text-blue-300 transition-colors">About Us</a></li>
-                        <li><a href="#" className="text-white text-2xl hover:text-blue-300 transition-colors">Contact</a></li>
+                        <li>
+                            <Link href="#" className="text-white text-2xl hover:text-blue-300 transition-colors">Home</Link>
+                        </li>
+                        <li>
+                            <Link href="/allProperties" className="text-white text-2xl hover:text-blue-300 transition-colors">Search Property</Link>
+                        </li>
+                        <li>
+                            <Link href="/blog" className="text-white text-2xl hover:text-blue-300 transition-colors">Blog</Link>
+                        </li>
+                        <li>
+                            <Link href="/profile" className="text-white text-2xl hover:text-blue-300 transition-colors">Profile</Link>
+                        </li>
+                        <li>
+                            <Link href="#" className="text-white text-2xl hover:text-blue-300 transition-colors">Contact</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
 
-            {/* Overlay when menu is open */}
+
             <div
                 className={`fixed inset-0 bg-black/20 z-40 transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
                     }`}

@@ -26,7 +26,7 @@ export const categories = [
     }
   ];
   
-  // app/data/properties.js
+  // Properties data
   
   export const properties = [
     {
@@ -75,7 +75,7 @@ export const categories = [
           name: 'Emily & John Smith',
           role: 'Buyer',
           comment: 'I found my ideal home in no time! The listings were detailed, the photos were accurate, and the whole process felt seamless. Customer service was top-notch answering all my questions. I will definitely use this platform again in the future!',
-          avatar: '/images/avatars/avatar1.jpg'
+          avatar: ''
         }
       ],
       coordinates: {
@@ -112,9 +112,9 @@ export const categories = [
       ],
       mainImage: 'https://images.unsplash.com/photo-1722421492323-eaf9c401befe?q=80&w=2395&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       images: [
-        '/images/properties/property2.jpg',
-        '/images/properties/interior1.jpg',
-        '/images/properties/interior2.jpg'
+        'https://images.unsplash.com/photo-1565329921943-7e537b7a2ea9?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1581404569456-a2e7007c3979?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1559599250-9214b5174538?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       ],
       highlights: [
         'Stunning City Views',
@@ -165,8 +165,8 @@ export const categories = [
       ],
       mainImage: 'https://images.unsplash.com/photo-1657346088167-b982455bf29a?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       images: [
-        '/images/properties/property3.jpg',
-        '/images/properties/interior3.jpg'
+        'https://images.unsplash.com/photo-1654175868733-6e60cc6f9ff4?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1641910532059-ad684fd3049c?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       ],
       highlights: [
         'Prime Business Location',
@@ -214,7 +214,7 @@ export const categories = [
         'Yacht Dock',
         'Outdoor Kitchen'
       ],
-      mainImage: '/images/properties/property4.jpg',
+      mainImage: 'https://images.unsplash.com/photo-1622015663319-e97e697503ee?q=80&w=3177&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       images: [
         '/images/properties/property4.jpg',
         '/images/properties/interior1.jpg',
@@ -231,7 +231,7 @@ export const categories = [
           name: 'Robert & Lisa Davis',
           role: 'Owners',
           comment: 'This property exceeded all our expectations. The views are incredible and the quality of construction is impressive.',
-          avatar: '/images/avatars/avatar4.jpg'
+          avatar: 'https://images.unsplash.com/photo-1649769425782-8cdb757da2b4?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         }
       ],
       coordinates: {
@@ -267,11 +267,11 @@ export const categories = [
         'Security System',
         'Bike Storage'
       ],
-      mainImage: '/images/properties/property5.jpg',
+      mainImage: 'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?q=80&w=2967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       images: [
-        '/images/properties/property5.jpg',
-        '/images/properties/interior2.jpg',
-        '/images/properties/interior3.jpg'
+        'https://images.unsplash.com/photo-1666037805138-f227944ed8d7?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1639059790587-95625e6b764c?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1638454795595-0a0abf68614d?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       ],
       highlights: [
         'Creative Neighborhood',
@@ -319,11 +319,11 @@ export const categories = [
         'Security System',
         'Bike Friendly'
       ],
-      mainImage: '/images/properties/property6.jpg',
+      mainImage: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       images: [
-        '/images/properties/property6.jpg',
-        '/images/properties/interior1.jpg',
-        '/images/properties/interior3.jpg'
+        'https://images.unsplash.com/photo-1593696140826-c58b021acf8b?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       ],
       highlights: [
         'Tech-Forward Design',

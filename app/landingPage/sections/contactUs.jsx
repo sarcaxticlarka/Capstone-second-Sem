@@ -3,7 +3,7 @@ import React from 'react';
 
 const ContactForm = () => {
   return (
-    <div
+    <div id='contact'
       className="min-h-[150vh] bg-cover bg-center flex flex-col items-center  pt-42 text-white"
       style={{ backgroundImage: 'url(https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)' }}
     >
