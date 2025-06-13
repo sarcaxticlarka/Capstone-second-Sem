@@ -170,13 +170,13 @@ export default function PropertyListing() {
                             <Link href="/allProperties" className="text-white text-2xl hover:text-blue-300 transition-colors">Search Property</Link>
                         </li>
                         <li>
-                            <Link href="/blog" className="text-white text-2xl hover:text-blue-300 transition-colors">Blog</Link>
+                            <Link href="/propertyBlog" className="text-white text-2xl hover:text-blue-300 transition-colors">Blog</Link>
                         </li>
                         <li>
                             <Link href="/profile" className="text-white text-2xl hover:text-blue-300 transition-colors">Profile</Link>
                         </li>
                         <li>
-                            <Link href="#" className="text-white text-2xl hover:text-blue-300 transition-colors">Contact</Link>
+                            <Link href="#contact" className="text-white text-2xl hover:text-blue-300 transition-colors">Contact</Link>
                         </li>
                     </ul>
                 </nav>

@@ -78,7 +78,7 @@ const Navbar = () => {
         <div className="flex flex-col items-start px-6 pt-20 space-y-6 font-bold text-lg">
           <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
           <Link href="/allProperties" onClick={() => setIsMenuOpen(false)}>Search Property</Link>
-          <Link href="/propertyBlog" onClick={() => setIsMenuOpen(false)}>Blog</Link>
+          <Link href="/propertyBlog" >Blog</Link>
           <Link href="/profile" onClick={() => setIsMenuOpen(false)}>Profile</Link>
 
           <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
