@@ -84,7 +84,7 @@ export default function SignupPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="pl-12 w-full py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
-                    placeholder="John Doe"
+                    placeholder="your name"
                   />
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <User className="text-gray-400" size={20} />
@@ -122,7 +122,7 @@ export default function SignupPage() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className="pl-12 w-full py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+91 9987675742"
                   />
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <Phone className="text-gray-400" size={20} />

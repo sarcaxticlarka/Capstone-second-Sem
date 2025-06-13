@@ -64,7 +64,7 @@ export default function PropertyListing() {
                     <div className="flex items-center">
                         <a href="tel:+12124567890" className="hidden md:flex items-center text-white mr-6">
                             <Phone className="w-5 h-5 mr-2" />
-                            <span>+1-212-456-7890</span>
+                            <span>+91-9988777664</span>
                         </a>
 
                         <button

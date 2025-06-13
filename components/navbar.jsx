@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-6">
             <div className="flex items-center text-[#151c1f] space-x-1">
               <Phone size={18} />
-              <span className="text-sm">+1-212-456-7890</span>
+              <span className="text-sm">+91-9988777664</span>
             </div>
             <button
               onClick={() => setIsMenuOpen(true)}
