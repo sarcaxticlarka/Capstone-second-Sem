@@ -1,3 +1,5 @@
+import { AuthProvider } from './context/authContext';
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ContactForm from "./landingPage/sections/contactUs";
@@ -23,10 +25,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      
-        {children}
+       <AuthProvider>
+       {children}
         <ContactForm/>
         <Footer/>
+       </AuthProvider>
+        
       </body>
     </html>
   );

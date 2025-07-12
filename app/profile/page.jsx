@@ -30,11 +30,11 @@ export default function LuxuryRealEstateUI() {
                             </button>
                         </Link>
 
-                        <Link href="/auth/login">
+                        {/* <Link href="/auth/login">
                             <button className="bg-gray-100 text-black px-5 py-2 rounded-full text-sm hover:bg-[#06BE8A]">
                                 Log in
                             </button>
-                        </Link>
+                        </Link> */}
                     </div>
 
                     <div className="flex items-center gap-2 text-sm text-gray-600">
