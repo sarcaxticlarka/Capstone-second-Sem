@@ -27,16 +27,29 @@
 // }
 
 // export const useAuth = () => useContext(AuthContext);
+
+// context/AuthContext.js
+ 
 "use client";
 
 import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../lib/firebase';
-import { onAuthStateChanged } from 'firebase/auth';
+import { 
+  onAuthStateChanged, 
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut
+} from 'firebase/auth';
 
-// Create context with default value
 const AuthContext = createContext({
   user: null,
-  loading: true
+  loading: true,
+  login: () => Promise.resolve(),
+  signup: () => Promise.resolve(),
+  googleLogin: () => Promise.resolve(),
+  logout: () => Promise.resolve()
 });
 
 export function AuthProvider({ children }) {
@@ -50,8 +63,7 @@ export function AuthProvider({ children }) {
           uid: firebaseUser.uid,
           email: firebaseUser.email,
           displayName: firebaseUser.displayName,
-          photoURL: firebaseUser.photoURL,
-          emailVerified: firebaseUser.emailVerified
+          photoURL: firebaseUser.photoURL
         });
       } else {
         setUser(null);
@@ -62,8 +74,29 @@ export function AuthProvider({ children }) {
     return () => unsubscribe();
   }, []);
 
+  const login = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const signup = (email, password, name) => {
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        return updateProfile(userCredential.user, {
+          displayName: name
+        });
+      });
+  };
+
+  const googleLogin = () => {
+    return signInWithPopup(auth, new GoogleAuthProvider());
+  };
+
+  const logout = () => {
+    return signOut(auth);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading }}>
+    <AuthContext.Provider value={{ user, loading, login, signup, googleLogin, logout }}>
       {children}
     </AuthContext.Provider>
   );
