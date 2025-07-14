@@ -36,14 +36,72 @@
 //   );
 // }
 
+// "use client";
+
+// import { AuthProvider } from './context/authContext';
+// import { usePathname, useRouter } from 'next/navigation';
+// import { useAuth } from './context/authContext';
+// import { useEffect } from 'react';
+
+// // This component protects routes that require authentication
+// function AuthGuard({ children }) {
+//   const { user, loading } = useAuth();
+//   const router = useRouter();
+//   const pathname = usePathname();
+
+//   useEffect(() => {
+//     if (!loading) {
+//       // If user is not authenticated and trying to access protected route
+//       if (!user && pathname.startsWith('/dashboard')) {
+//         router.push('/auth/login');
+//       }
+//       // If user is authenticated and trying to access auth pages
+//       if (user && (pathname === '/auth/login' || pathname === '/auth/signup')) {
+//         router.push('/dashboard');
+//       }
+//     }
+//   }, [user, loading, pathname, router]);
+
+//   if (loading) {
+//     return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+//   }
+
+//   return children;
+// }
+
+// export default function RootLayout({ children }) {
+//   return (
+//     <html lang="en">
+//       <body>
+//         <AuthProvider>
+//           <AuthGuard>{children}</AuthGuard>
+//         </AuthProvider>
+//       </body>
+//     </html>
+//   );
+// }
+
 "use client";
 
-import { AuthProvider } from './context/authContext';
+import { AuthProvider, useAuth } from './context/authContext';
 import { usePathname, useRouter } from 'next/navigation';
-import { useAuth } from './context/authContext';
 import { useEffect } from 'react';
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import ContactForm from "./landingPage/sections/contactUs";
+import Footer from "@/components/footer";
 
-// This component protects routes that require authentication
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+// AuthGuard logic
 function AuthGuard({ children }) {
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -51,11 +109,9 @@ function AuthGuard({ children }) {
 
   useEffect(() => {
     if (!loading) {
-      // If user is not authenticated and trying to access protected route
       if (!user && pathname.startsWith('/dashboard')) {
         router.push('/auth/login');
       }
-      // If user is authenticated and trying to access auth pages
       if (user && (pathname === '/auth/login' || pathname === '/auth/signup')) {
         router.push('/dashboard');
       }
@@ -63,18 +119,28 @@ function AuthGuard({ children }) {
   }, [user, loading, pathname, router]);
 
   if (loading) {
-    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Loading...
+      </div>
+    );
   }
 
   return children;
 }
 
+ 
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="antialiased">
         <AuthProvider>
-          <AuthGuard>{children}</AuthGuard>
+          <AuthGuard>
+            {children}
+            <ContactForm />
+            <Footer />
+          </AuthGuard>
         </AuthProvider>
       </body>
     </html>
