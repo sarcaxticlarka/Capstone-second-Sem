@@ -72,7 +72,7 @@ export const categories = [
       locationDetails: 'Located amidst lush green landscapes, Maplewood Residence is just minutes away from essential conveniences. With nearby shopping centers, fine dining restaurants, and reputable schools, you\'ll enjoy the ideal balance of tranquility and accessibility.',
       testimonials: [
         {
-          name: 'Emily & John Smith',
+          name: 'Aditya',
           role: 'Buyer',
           comment: 'I found my ideal home in no time! The listings were detailed, the photos were accurate, and the whole process felt seamless. Customer service was top-notch answering all my questions. I will definitely use this platform again in the future!',
           avatar: ''
@@ -124,7 +124,7 @@ export const categories = [
       locationDetails: 'Skyline Apartments offers the perfect blend of urban living and comfort. Located in the heart of the city, you\'ll be close to public transportation, cultural venues, and a variety of dining options.',
       testimonials: [
         {
-          name: 'Michael Johnson',
+          name: 'Rohan',
           role: 'Tenant',
           comment: 'Living here has been a wonderful experience. The amenities are excellent and the location is perfect for my lifestyle.',
           avatar: '/images/avatars/avatar2.jpg'
@@ -176,10 +176,10 @@ export const categories = [
       locationDetails: 'Situated in the bustling business district, Executive Office Tower provides the perfect setting for your company to thrive. With easy access to major transportation hubs and surrounded by other prestigious businesses.',
       testimonials: [
         {
-          name: 'Sarah Thompson',
+          name: 'Manish',
           role: 'CEO',
           comment: 'We moved our headquarters here last year and couldn\'t be happier. The facilities are excellent and our team loves the location.',
-          avatar: '/images/avatars/avatar3.jpg'
+          avatar: 'https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         }
       ],
       coordinates: {
@@ -216,9 +216,9 @@ export const categories = [
       ],
       mainImage: 'https://images.unsplash.com/photo-1622015663319-e97e697503ee?q=80&w=3177&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       images: [
-        '/images/properties/property4.jpg',
-        '/images/properties/interior1.jpg',
-        '/images/properties/interior2.jpg'
+        'https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1639563976871-04a85be57549?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       ],
       highlights: [
         'Waterfront Location',
@@ -228,10 +228,10 @@ export const categories = [
       locationDetails: 'Coastal Villa is set in one of the most prestigious neighborhoods in Miami. Enjoy the privacy of your own beach while being just minutes away from world-class dining and entertainment.',
       testimonials: [
         {
-          name: 'Robert & Lisa Davis',
+          name: 'Hritk Singh',
           role: 'Owners',
           comment: 'This property exceeded all our expectations. The views are incredible and the quality of construction is impressive.',
-          avatar: 'https://images.unsplash.com/photo-1649769425782-8cdb757da2b4?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          avatar: 'https://images.unsplash.com/photo-1610271283578-a595c4608e13?q=80&w=930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         }
       ],
       coordinates: {
@@ -281,10 +281,10 @@ export const categories = [
       locationDetails: 'Urban Loft is located in the heart of the city\'s most creative district. Surrounded by galleries, cafes, and boutiques, this location offers an inspiring environment for those who appreciate art and culture.',
       testimonials: [
         {
-          name: 'David Wilson',
+          name: 'Aditi Jha',
           role: 'Artist',
           comment: 'The perfect space for both living and working. The natural light is amazing and the community is fantastic.',
-          avatar: '/images/avatars/avatar5.jpg'
+          avatar: 'https://images.unsplash.com/photo-1516195851888-6f1a981a862e?q=80&w=810&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         }
       ],
       coordinates: {
@@ -333,10 +333,10 @@ export const categories = [
       locationDetails: 'Tech Hub Office is situated in Austin\'s growing innovation district. This location puts you in the center of the tech ecosystem, with easy access to talent, investors, and like-minded companies.',
       testimonials: [
         {
-          name: 'Jessica Lee',
+          name: 'Eman Sehar',
           role: 'Startup Founder',
           comment: 'Moving our startup here was the best decision. The space is perfect for our team and being in this location has helped us make valuable connections.',
-          avatar: '/images/avatars/avatar6.jpg'
+          avatar: 'https://images.unsplash.com/photo-1526476148966-98bd039463ea?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         }
       ],
       coordinates: {
