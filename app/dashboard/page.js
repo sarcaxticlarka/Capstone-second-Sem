@@ -546,7 +546,7 @@ export default function Dashboard() {
         className={`fixed inset-y-0 left-0 w-72 shadow-2xl z-20 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}
       >
         <div className={`flex items-center justify-center h-20 border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent cursor-pointer "><Link href="/">Homely</Link> </h1>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-[#06BE8A] to-[#06BE8A] bg-clip-text text-transparent cursor-pointer "><Link href="/">Homely</Link> </h1>
         </div>
         <nav className="p-4 mt-2">
           <div className="space-y-1">
@@ -630,7 +630,7 @@ export default function Dashboard() {
         <header className={`sticky top-0 z-10 ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-sm`}>
           <div className="flex items-center justify-between px-8 py-4">
             <h2 className="text-2xl font-semibold">
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#06BE8A] to-[#06BE8A] bg-clip-text text-transparent">
                 Welcome back, {user.displayName || 'User'}!
               </span>
             </h2>
@@ -745,7 +745,7 @@ export default function Dashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className={`rounded-2xl p-6 mb-8 shadow-lg bg-gradient-to-r from-blue-600 to-purple-700 text-white`}
+            className={`rounded-2xl p-6 mb-8 shadow-lg bg-gradient-to-r from-[#06BE8A] to-[#06BE8A]/50 text-white`}
           >
             <div className="flex justify-between items-center">
               <div>
