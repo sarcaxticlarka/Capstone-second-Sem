@@ -32,7 +32,7 @@ export const categories = [
     {
       id: '1',
       title: 'Maplewood Residence',
-      location: '12 Emerald Heights, Los Angeles',
+      location: '12 Emerald Heights, Noida Sector 62',
       categoryId: 'residential',
       price: 590000,
       discounted: true,
@@ -86,7 +86,7 @@ export const categories = [
     {
       id: '2',
       title: 'Skyline Apartments',
-      location: '45 Harbor View, San Francisco',
+      location: '45 Harbor View, Kolkata Book Lane',
       categoryId: 'apartment',
       price: 450000,
       discounted: false,
@@ -138,7 +138,7 @@ export const categories = [
     {
       id: '3',
       title: 'Executive Office Tower',
-      location: '100 Business District, New York',
+      location: '100 Business District, South Delhi',
       categoryId: 'office',
       price: 1200000,
       discounted: true,
@@ -190,7 +190,7 @@ export const categories = [
     {
       id: '4',
       title: 'Coastal Villa',
-      location: '8 Seaside Drive, Miami',
+      location: '8 Seaside Drive, Mumbai',
       categoryId: 'luxury',
       price: 2500000,
       discounted: false,
@@ -242,7 +242,7 @@ export const categories = [
     {
       id: '5',
       title: 'Urban Loft',
-      location: '78 Artist District, Chicago',
+      location: '78 Artist District, Hyderbad',
       categoryId: 'apartment',
       price: 380000,
       discounted: true,
@@ -295,7 +295,7 @@ export const categories = [
     {
       id: '6',
       title: 'Tech Hub Office',
-      location: '255 Innovation Street, Austin',
+      location: '255 Innovation Street, Banglore',
       categoryId: 'office',
       price: 780000,
       discounted: false,
