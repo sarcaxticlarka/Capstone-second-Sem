@@ -22,29 +22,28 @@ export default function BlogSection() {
               Stay ahead in the property market with expert advice and updates
             </p>
           </div>
-
+          <Link href="/propertyBlog" >
           <button className="bg-gray-900 text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-[#06be8a] transition">
             Read all articles
           </button>
+          </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {featuredBlogs.map((blog) => (
-            <div key={blog.id} className="  overflow-hidden">
-              <img src={blog.image} alt={blog.title} className="w-full h-60 object-cover" />
-              <div className="py-4 ">
-
-                <div className='flex justify-between items-center'>
-                  <h3 className="text-xl mb-1">{blog.title}</h3>
-
-                  <span className="text-sm text-gray-500 mb-2 block bg-gray-200 px-2 py-1 rounded-full">{blog.tag}</span>
-                </div>
-                <span className="text-md text-gray-500 mb-2 block ">{blog.date}</span>
-
-              </div>
-
-            </div>
-          ))}
+  {featuredBlogs.map((blog) => (
+    <Link key={blog.id} href={`/propertyBlog/${blog.id}`}>
+      <div className="cursor-pointer overflow-hidden">
+        <img src={blog.image} alt={blog.title} className="w-full h-60 object-cover" />
+        <div className="py-4">
+          <div className='flex justify-between items-center'>
+            <h3 className="text-xl mb-1">{blog.title}</h3>
+            <span className="text-sm text-gray-500 mb-2 block bg-gray-200 px-2 py-1 rounded-full">{blog.tag}</span>
+          </div>
+          <span className="text-md text-gray-500 mb-2 block">{blog.date}</span>
         </div>
+      </div>
+    </Link>
+  ))}
+</div>
 
        
       </div>
