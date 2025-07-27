@@ -908,7 +908,7 @@ export default function Dashboard() {
                 </button>
               </div>
               <div className="h-64 flex">
-                {/* Properties Chart - Update the PieChart section */}
+                {/* Properties Chart  */}
                 <div className="w-1/2 h-full">
                   <ResponsiveContainer width="100%" height="100%">
                     <RechartsPieChart>

@@ -4,10 +4,15 @@ import { properties } from "../../data/categories";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/navbar";
+import emailjs from 'emailjs-com';
+import { useRef, useState } from 'react';
 
 export default function PropertyDetail() {
   const params = useParams();
   const propertyId = params.id;
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const property = properties.find(p => p.id === propertyId);
 
@@ -25,10 +30,82 @@ export default function PropertyDetail() {
     );
   }
 
+  const formRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_fqper5m',       
+      'template_9ucjk8j',       
+      formRef.current,
+      'w_PS233C_l9GUEVXj'      
+    )
+    .then((result) => {
+      console.log(result.text);
+      setPopupMessage("Message sent successfully!");
+      setIsSuccess(true);
+      setShowPopup(true);
+      formRef.current.reset();
+      setTimeout(() => setShowPopup(false), 3000);
+    }, (error) => {
+      console.error(error.text);
+      setPopupMessage("Something went wrong. Please try again.");
+      setIsSuccess(false);
+      setShowPopup(true);
+      setTimeout(() => setShowPopup(false), 3000);
+    });
+  };
+
+   
+  const Notification = () => {
+    if (!showPopup) return null;
+    
+    return (
+      <div className={`fixed bottom-4 right-4 z-50 p-4 rounded-lg shadow-lg border ${
+        isSuccess 
+          ? 'bg-[#06BE8A] bg-opacity-20 border-[#06BE8A]' 
+          : 'bg-red-100 border-red-300'
+      } max-w-xs w-full transition-all duration-300 ease-in-out`}>
+        <div className="flex items-start">
+          <div className={`flex-shrink-0 h-6 w-6 rounded-full flex items-center justify-center ${
+            isSuccess ? 'bg-[#06BE8A]' : 'bg-red-500'
+          }`}>
+            {isSuccess ? (
+              <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            ) : (
+              <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+          </div>
+          <div className="ml-3">
+            <p className={`text-sm font-medium ${
+              isSuccess ? 'text-[#000]' : 'text-red-800'
+            }`}>
+              {popupMessage}
+            </p>
+          </div>
+          <button
+            onClick={() => setShowPopup(false)}
+            className="ml-auto -mx-1.5 -my-1.5 p-1.5 rounded-full inline-flex items-center justify-center text-gray-400 hover:text-gray-500 focus:outline-none"
+          >
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="">
       <Navbar className="pb-12" />
       <main className="min-h-screen bg-white py-2 px-4 sm:px-8 lg:px-16 pt-24">
+      <Notification />
 
         {/* Back button */}
         <div className="max-w-7xl mx-auto mb-8">
@@ -207,31 +284,31 @@ export default function PropertyDetail() {
 
               {/* Contact Section */}
               <section className="bg-[#06BE8A] bg-opacity-10 p-6 rounded-xl border border-[#06BE8A] border-opacity-30">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Interested in this property?</h2>
-                <p className="text-gray-700 mb-6">Fill out the form below and our agent will contact you soon.</p>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Interested in this property?</h2>
+          <p className="text-gray-700 mb-6">Fill out the form below and our agent will contact you soon.</p>
 
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                    <input type="text" id="name" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#06BE8A] focus:border-[#06BE8A]" />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input type="email" id="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#06BE8A] focus:border-[#06BE8A]" />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#06BE8A] focus:border-[#06BE8A]" />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                    <textarea id="message" rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#06BE8A] focus:border-[#06BE8A]"></textarea>
-                  </div>
-                  <button type="submit" className="w-full border bg-[#06BE8A] text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition">
-                    Send Inquiry
-                  </button>
-                </form>
-              </section>
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <input type="text" name="name" required className="w-full px-4 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input type="email" name="email" required className="w-full px-4 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+              <input type="tel" name="phone" required className="w-full px-4 py-2 border border-gray-300 rounded-md" />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea name="message" rows={4} required className="w-full px-4 py-2 border border-gray-300 rounded-md"></textarea>
+            </div>
+            <button type="submit" className="w-full border bg-[#06BE8A] text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition">
+              Send Inquiry
+            </button>
+          </form>
+        </section>
             </div>
           </div>
         </div>
